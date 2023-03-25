@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const User = require("./models/User");
 
 mongoose
-  .connect(process.env.MONGO_LOCAL)
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("Connected"))
   .catch(() => console.log("Not Connected"));
 
