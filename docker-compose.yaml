@@ -6,4 +6,4 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - MONGO_URI=mongodb+srv://fatih:ePgecK4N1JqdnTFC@cluster0.wyzixjs.mongodb.net/VrWebsite
+      - MONGO_URI=
