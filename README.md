@@ -1,4 +1,4 @@
-_Note:_ Make sure you have docker engine installed on your machine (https://docs.docker.com/engine/install/ubuntu/)
+_Note:_ Make sure you have docker engine installed on your machine. If not, install it => https://docs.docker.com/engine/install/ubuntu/
 
 **The steps to run the project properly:**
 
@@ -6,11 +6,11 @@ _Note:_ Make sure you have docker engine installed on your machine (https://docs
 
 2. Run the project by:
 
-# docker compose up -d
+docker compose up -d
 
-You can access to website from:
+_You can access to website from:_
 
-# http://localhost:3000
+http://localhost:3000
 
 -
 -

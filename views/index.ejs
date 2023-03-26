@@ -83,7 +83,7 @@
                 aspernatur that is fugit.
               </p>
 
-              <form action="/submit" method="post" class="hero-form">
+              <form class="hero-form" id="subscribeForm">
                 <input
                   type="email"
                   name="email"
@@ -94,6 +94,8 @@
 
                 <button type="submit" class="btn btn-primary">Subscribe</button>
               </form>
+              <br />
+              <div id="subscribeSuccessMsg"></div>
             </div>
 
             <figure class="hero-banner">
@@ -306,24 +308,24 @@
         <section class="contact" id="contact">
           <div class="container">
             <h2 class="h2 section-title">
-              Got Any Suggestion For Our Product?
+              Would You Like To Share Your Feedback?
             </h2>
 
             <p class="section-text">
-              We'd love to hear your suggestions about our product. So we can
+              We'd love to hear your feedback about our product. So we can
               improve it much better.
             </p>
 
             <div class="contact-wrapper">
-              <form action="/submit" method="post" class="contact-form">
+              <form class="contact-form" id="feedbackForm">
                 <div class="wrapper-flex">
                   <div class="input-wrapper">
                     <label for="name">Name*</label>
 
                     <input
                       type="text"
-                      name="full_name"
-                      id="full_name"
+                      name="name"
+                      id="name"
                       required
                       placeholder="Enter Your Name"
                       class="input-field"
@@ -370,12 +372,12 @@
                   </div>
                 </div>
 
-                <label for="message">Message</label>
+                <label for="feedback">Feedback</label>
 
                 <textarea
-                  name="message"
-                  id="message"
-                  placeholder="Type Your Message"
+                  name="feedback"
+                  id="feedback"
+                  placeholder="Type Your Feedback"
                   class="input-field"
                 ></textarea>
 
@@ -385,11 +387,74 @@
                   <ion-icon name="paper-plane-outline"></ion-icon>
                 </button>
               </form>
+              <br />
+              <div id="formSuccessMsg"></div>
             </div>
           </div>
         </section>
       </article>
     </main>
+
+    <script>
+      //Show a succes message to user after the form submitted
+
+      const feedbackForm = document.getElementById("feedbackForm");
+      feedbackForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(feedbackForm);
+        const name = formData.get("name");
+        const email = formData.get("email");
+        const twitter = formData.get("twitter");
+        const discord = formData.get("discord");
+        const feedback = formData.get("feedback");
+
+        const res = await fetch("/submit-form", {
+          method: "POST",
+          body: JSON.stringify({ name, email, twitter, discord, feedback }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await res.json();
+
+        formSuccessMsg.innerText = data.message;
+
+        feedbackForm.reset();
+
+        setTimeout(() => {
+          formSuccessMsg.innerText = "";
+        }, 5000);
+      });
+
+      //Show a succes message to user after subscribed
+
+      const subscribeForm = document.getElementById("subscribeForm");
+      subscribeForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const formData = new FormData(subscribeForm);
+        const email = formData.get("email");
+
+        const res = await fetch("/subscribe", {
+          method: "POST",
+          body: JSON.stringify({ email }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await res.json();
+
+        email.innerText = "";
+
+        subscribeSuccessMsg.innerText = data.message;
+
+        subscribeForm.reset();
+
+        setTimeout(() => {
+          subscribeSuccessMsg.innerText = "";
+        }, 5000);
+      });
+    </script>
 
     <!-- 
     - FOOTER

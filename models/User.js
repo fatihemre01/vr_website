@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-    full_name: String,
+    name: String,
     email: String,
     twitter: String,
     discord: String,
-    message: String,
+    feedback: String,
   },
-  { timestamps: true, versionKey: false }
+  { versionKey: false }
 );
 
 module.exports = new mongoose.model("user", userSchema);
