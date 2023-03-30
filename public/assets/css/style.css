@@ -447,7 +447,7 @@ body {
 }
 
 .features-content-text {
-  font-size: var(--fs-6);
+  font-size: 18px;
   color: var(--cool-gray);
   line-height: 1.7;
   margin-bottom: 25px;
