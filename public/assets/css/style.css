@@ -200,7 +200,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--white);
+  background: #fefefe;
   padding-block: 20px;
   box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.05);
   height: 65px;
@@ -217,6 +217,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .menu-toggle-btn {
@@ -246,7 +248,6 @@ body {
 
 .hero {
   padding: 125px 0 var(--section-padding);
-  background: var(--ghost-white-1);
 }
 
 .hero-content {
@@ -255,10 +256,11 @@ body {
 
 .hero-title {
   margin-bottom: 25px;
+  color: var(--white);
 }
 
 .hero-text {
-  color: var(--cool-gray);
+  color: var(--white);
   font-size: var(--fs-4);
   font-weight: var(--fw-500);
   line-height: 1.8;
@@ -285,7 +287,7 @@ body {
 }
 
 .email-field:focus {
-  outline-color: var(--majorelle-blue);
+  outline: none;
 }
 
 .hero .btn-primary {
@@ -325,7 +327,7 @@ body {
 }
 
 .about-text {
-  color: var(--cool-gray);
+  color: var(--white);
   font-weight: var(--fw-500);
   line-height: 1.8;
   margin-bottom: 20px;
@@ -397,7 +399,6 @@ body {
 
 .features {
   padding-block: var(--section-padding);
-  background: var(--ghost-white-1);
 }
 
 .features .section-title {
@@ -437,7 +438,7 @@ body {
 .features-content-title {
   font-size: var(--fs-2);
   font-family: var(--ff-mulish);
-  color: var(--independence);
+  color: var(--white);
   font-weight: var(--fw-600);
   margin-bottom: 25px;
 }
@@ -448,7 +449,7 @@ body {
 
 .features-content-text {
   font-size: 18px;
-  color: var(--cool-gray);
+  color: var(--white);
   line-height: 1.7;
   margin-bottom: 25px;
 }
@@ -488,93 +489,22 @@ body {
 }
 
 /*-----------------------------------*\
-  #BLOG
-\*-----------------------------------*/
-
-.blog {
-  padding-block: var(--section-padding);
-}
-
-.blog .section-title {
-  margin-bottom: 20px;
-}
-
-.blog .section-text {
-  margin-bottom: 40px;
-}
-
-.blog-list {
-  display: grid;
-  gap: 30px;
-}
-
-.blog-banner {
-  margin-bottom: 20px;
-}
-
-.blog-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.blog-meta {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  font-size: var(--fs-6);
-  text-transform: uppercase;
-  color: var(--cool-gray);
-  margin-bottom: 10px;
-}
-
-.blog-meta span {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.blog-title {
-  font-size: var(--fs-3);
-  color: var(--independence);
-}
-
-.blog-text {
-  color: var(--cool-gray);
-  font-size: var(--fs-6);
-  line-height: 1.7;
-  margin-bottom: 15px;
-}
-
-.blog-link-btn {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--majorelle-blue);
-  font-weight: var(--fw-600);
-}
-
-.blog-link-btn:is(:hover, :focus) {
-  color: var(--sapphire);
-}
-
-/*-----------------------------------*\
   #CONTACT
 \*-----------------------------------*/
 
 .contact {
   padding-block: var(--section-padding);
-  background: var(--ghost-white-1);
+  /*background: var(--ghost-white-1);*/
 }
 
 .contact .section-title {
   margin-bottom: 15px;
+  color: var(--white);
 }
 
 .contact .section-text {
   margin-bottom: 60px;
+  color: var(--white);
 }
 
 .contact-form {
@@ -586,27 +516,26 @@ body {
 }
 
 .contact label {
-  color: var(--independence);
+  color: var(--white);
   font-weight: var(--fw-500);
   margin-bottom: 10px;
 }
 
 .contact .input-field {
   background: transparent;
-  color: var(--independence);
+  color: var(--white);
   font-size: var(--fs-7);
   padding: 10px 15px;
-  border: 1px solid hsla(244, 17%, 67%, 0.3);
+  border: 2px solid hsla(0, 0%, 46%, 0.197);
   border-radius: 4px;
 }
 
 .contact .input-field:focus {
   outline: none;
-  background: var(--ghost-white-2);
 }
 
 .contact .input-field::placeholder {
-  color: var(--cool-gray);
+  color: #d6d6d6ac;
 }
 
 textarea.input-field {
@@ -674,6 +603,9 @@ footer {
 
 footer .logo {
   margin-bottom: 25px;
+  color: #94949d;
+  font-size: 35px;
+  font-weight: bold;
 }
 
 .footer-text {
